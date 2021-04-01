@@ -13,7 +13,7 @@ function App() {
         {$state.isLoading ? <p>loading</p> : (
           <>
             <p>{viewer.name}</p>
-            {viewer?.followers({ first: 5 })?.nodes?.map((follower, index) => {
+            {viewer.followers({ first: 5 }).nodes?.map((follower, index) => {
               return <p key={follower?.id || index}>{follower?.name}</p>
             })}
           </>
